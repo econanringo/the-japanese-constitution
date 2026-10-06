@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>日本国憲法 穴埋め学習｜第一条〜第二十八条</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <p class="brand-mark">憲法学習</p>
+      <h1>日本国憲法　穴埋め</h1>
+      <p class="brand-sub">前文・第一条〜第二十八条</p>
+    </div>
+    <div class="header-stats" aria-live="polite">
+      <div class="stat">
+        <span class="stat-label">進捗</span>
+        <span class="stat-value" id="progress-text">0 / 0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">正答率</span>
+        <span class="stat-value" id="accuracy-text">—</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="条文一覧">
+      <div class="sidebar-tools">
+        <button type="button" class="btn btn-ghost" id="btn-reset" title="入力と採点をクリア">リセット</button>
+        <button type="button" class="btn btn-ghost" id="btn-reveal-all" title="すべての答えを表示">答えを見る</button>
+      </div>
+      <nav id="article-nav" class="article-nav"></nav>
+    </aside>
+
+    <main class="main">
+      <section class="toolbar" aria-label="操作">
+        <div class="toolbar-left">
+          <button type="button" class="btn btn-secondary" id="btn-prev" disabled>前へ</button>
+          <button type="button" class="btn btn-secondary" id="btn-next">次へ</button>
+        </div>
+        <div class="toolbar-right">
+          <button type="button" class="btn btn-ghost" id="btn-hint">ヒント</button>
+          <button type="button" class="btn btn-primary" id="btn-check">採点する</button>
+        </div>
+      </section>
+
+      <article class="card" id="quiz-card">
+        <header class="card-header">
+          <p class="chapter" id="chapter-label"></p>
+          <h2 id="article-title"></h2>
+        </header>
+        <div class="card-body" id="quiz-body"></div>
+        <footer class="card-footer">
+          <p class="feedback" id="feedback" role="status"></p>
+        </footer>
+      </article>
+
+      <p class="howto">
+        空欄に語句を入力し「採点する」を押してください。ヒントは先頭の1文字を表示します。旧字体・かなづかいは原文どおりです。
+      </p>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
