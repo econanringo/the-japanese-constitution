@@ -5,7 +5,7 @@
     return;
   }
 
-  const STORAGE_KEY = "kenpo-fill-blank-v1";
+  const STORAGE_KEY = window.QUIZ_STORAGE_KEY || "kenpo-fill-blank-v1";
 
   const els = {
     nav: document.getElementById("article-nav"),
