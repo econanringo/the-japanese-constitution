@@ -467,3 +467,331 @@ body {
     padding: 0.6rem 0.95rem;
   }
 }
+
+/* —— 憲法条文 小テスト —— */
+.test-page .test-header {
+  align-items: stretch;
+}
+
+.pack-sep {
+  margin: 0 0.35rem;
+  color: var(--muted);
+}
+
+.score-box {
+  min-width: 8.5rem;
+  padding: 0.85rem 1.1rem 1rem;
+  border: 2px solid rgba(196, 59, 59, 0.45);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+  text-align: center;
+  align-self: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.score-box.pulse {
+  transform: scale(1.04);
+  box-shadow: 0 10px 28px rgba(196, 59, 59, 0.22);
+}
+
+.score-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.score-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.2rem;
+  margin-top: 0.2rem;
+  font-family: var(--font-display);
+}
+
+.score-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 1.6em;
+}
+
+.score-value.scored {
+  color: var(--accent);
+}
+
+.score-slash,
+.score-max {
+  font-size: 1.25rem;
+  color: var(--ink-soft);
+}
+
+.test-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.25rem;
+  align-items: center;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) 1rem;
+  animation: rise 0.75s ease 0.05s both;
+}
+
+.meta-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.meta-input {
+  border: none;
+  border-bottom: 1.5px solid rgba(21, 32, 43, 0.28);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink);
+  font: inherit;
+  font-family: var(--font-display);
+  text-align: center;
+  padding: 0.15rem 0.35rem;
+}
+
+.meta-input:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+  background: rgba(196, 59, 59, 0.06);
+}
+
+.meta-class,
+.meta-number {
+  width: 2.8rem;
+}
+
+.meta-name {
+  width: min(14rem, 42vw);
+  text-align: left;
+}
+
+.meta-name-field {
+  gap: 0.45rem;
+}
+
+.test-toolbar {
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  animation: rise 0.8s ease 0.08s both;
+}
+
+.test-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  gap: 1.25rem;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) 3rem;
+  align-items: start;
+  animation: rise 0.85s ease 0.12s both;
+}
+
+.test-exam .card-body {
+  padding: 1.35rem 1.5rem 0.5rem;
+}
+
+.exam-article {
+  margin-bottom: 1.35rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+.exam-article:last-child {
+  border-bottom: none;
+  margin-bottom: 0.5rem;
+}
+
+.exam-article-title {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-deep);
+}
+
+.test-blank {
+  position: relative;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.25rem;
+  margin: 0 0.1rem;
+}
+
+.test-blank .blank-mark {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-right: 0.1rem;
+}
+
+.test-blank.blank-echo {
+  display: inline-flex;
+  align-items: center;
+  min-width: 2.2em;
+  padding: 0 0.2rem;
+  border-bottom: 2px dotted rgba(21, 32, 43, 0.22);
+  vertical-align: baseline;
+}
+
+.test-blank .blank-correction {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ng);
+  margin-left: 0.15rem;
+}
+
+.test-sheet {
+  position: sticky;
+  top: 1rem;
+  overflow: hidden;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem 1.1rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(228, 235, 240, 0.65), transparent);
+}
+
+.sheet-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+}
+
+.sheet-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.sheet-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.85rem 1rem 1.1rem;
+  max-height: min(72vh, 760px);
+  overflow: auto;
+}
+
+.sheet-row {
+  display: grid;
+  grid-template-columns: 1.6rem minmax(0, 1fr) 1.1rem;
+  grid-template-rows: auto auto;
+  column-gap: 0.35rem;
+  row-gap: 0.1rem;
+  align-items: center;
+  padding: 0.3rem 0.35rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.sheet-row.correct {
+  background: var(--ok-bg);
+}
+
+.sheet-row.incorrect {
+  background: var(--ng-bg);
+}
+
+.sheet-row.revealed {
+  background: rgba(21, 32, 43, 0.05);
+}
+
+.sheet-num {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.sheet-row input {
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid rgba(21, 32, 43, 0.22);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  padding: 0.15rem 0.2rem;
+}
+
+.sheet-row input:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+.sheet-row.correct input {
+  color: var(--ok);
+  border-bottom-color: var(--ok);
+}
+
+.sheet-row.incorrect input {
+  color: var(--ng);
+  border-bottom-color: var(--ng);
+}
+
+.sheet-mark {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.sheet-row.correct .sheet-mark,
+.sheet-row.revealed .sheet-mark {
+  color: var(--ok);
+}
+
+.sheet-row.incorrect .sheet-mark {
+  color: var(--ng);
+}
+
+.sheet-correction {
+  grid-column: 2 / -1;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ng);
+  min-height: 0.9em;
+}
+
+@media (max-width: 960px) {
+  .test-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .test-sheet {
+    position: static;
+  }
+
+  .sheet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    max-height: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .test-meta {
+    gap: 0.65rem 0.85rem;
+  }
+
+  .meta-name {
+    width: min(12rem, 55vw);
+  }
+
+  .score-box {
+    width: 100%;
+  }
+}

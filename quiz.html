@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>憲法条文 小テスト ver.1｜穴埋め</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="test-page">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="site-header test-header">
+    <div class="brand">
+      <p class="brand-mark">憲法学習</p>
+      <h1>憲法条文　小テスト</h1>
+      <p class="brand-sub">ver. 1　—　条文穴埋め（全30問）</p>
+      <p class="pack-nav">
+        <a href="index.html">全文セット</a>
+        <span class="pack-sep" aria-hidden="true">／</span>
+        <a href="study.html">授業抽出セット</a>
+      </p>
+    </div>
+    <div class="score-box" aria-live="polite">
+      <span class="score-label">得点</span>
+      <div class="score-line">
+        <span class="score-value" id="score-value">—</span>
+        <span class="score-slash">/</span>
+        <span class="score-max" id="score-max">30</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="test-meta">
+    <label class="meta-field">
+      <span>（</span>
+      <input type="text" id="student-class" class="meta-input meta-class" maxlength="4" aria-label="組" />
+      <span>）組</span>
+    </label>
+    <label class="meta-field">
+      <span>（</span>
+      <input type="text" id="student-number" class="meta-input meta-number" maxlength="4" aria-label="出席番号" />
+      <span>）番</span>
+    </label>
+    <label class="meta-field meta-name-field">
+      <span>氏名</span>
+      <input type="text" id="student-name" class="meta-input meta-name" maxlength="40" aria-label="氏名" />
+    </label>
+  </div>
+
+  <section class="toolbar test-toolbar" aria-label="操作">
+    <div class="toolbar-left">
+      <button type="button" class="btn btn-ghost" id="btn-reset">リセット</button>
+      <button type="button" class="btn btn-ghost" id="btn-reveal">答えを見る</button>
+    </div>
+    <div class="toolbar-right">
+      <button type="button" class="btn btn-primary" id="btn-check">採点する</button>
+    </div>
+  </section>
+
+  <div class="test-layout">
+    <main class="test-exam card" aria-label="問題">
+      <div class="card-body" id="exam-body"></div>
+      <footer class="card-footer">
+        <p class="feedback" id="feedback" role="status"></p>
+        <p class="howto">
+          空欄に語句を入力し「採点する」を押してください。同じ番号が文中に複数ある場合は、最初の空欄への入力が解答になります。誤答には赤字で正解を示します。
+        </p>
+      </footer>
+    </main>
+
+    <aside class="test-sheet card" aria-label="解答用紙">
+      <header class="sheet-header">
+        <h2>解答欄</h2>
+        <p>①〜㉚</p>
+      </header>
+      <div class="sheet-grid" id="answer-sheet"></div>
+    </aside>
+  </div>
+
+  <script src="quiz-data.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
