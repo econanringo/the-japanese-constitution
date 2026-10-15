@@ -83,39 +83,10 @@
   }
 
   function circleNum(n) {
-    const map = {
-      1: "①",
-      2: "②",
-      3: "③",
-      4: "④",
-      5: "⑤",
-      6: "⑥",
-      7: "⑦",
-      8: "⑧",
-      9: "⑨",
-      10: "⑩",
-      11: "⑪",
-      12: "⑫",
-      13: "⑬",
-      14: "⑭",
-      15: "⑮",
-      16: "⑯",
-      17: "⑰",
-      18: "⑱",
-      19: "⑲",
-      20: "⑳",
-      21: "㉑",
-      22: "㉒",
-      23: "㉓",
-      24: "㉔",
-      25: "㉕",
-      26: "㉖",
-      27: "㉗",
-      28: "㉘",
-      29: "㉙",
-      30: "㉚",
-    };
-    return map[n] || String(n);
+    if (n >= 1 && n <= 20) return String.fromCharCode(0x2460 + n - 1);
+    if (n >= 21 && n <= 35) return String.fromCharCode(0x3251 + n - 21);
+    if (n >= 36 && n <= 50) return String.fromCharCode(0x32b1 + n - 36);
+    return String(n);
   }
 
   function parseText(text, seenBlanks) {
@@ -404,6 +375,12 @@
   }
 
   els.scoreMax.textContent = String(meta.total);
+  const sheetRange = document.querySelector(".sheet-header p");
+  if (sheetRange && answers.length) {
+    const first = answers[0].id;
+    const last = answers[answers.length - 1].id;
+    sheetRange.textContent = `${circleNum(first)}〜${circleNum(last)}`;
+  }
   loadStudentFields();
   renderExam();
   renderAnswerSheet();

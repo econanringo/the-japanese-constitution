@@ -623,7 +623,7 @@ body {
 }
 
 .test-blank .blank-mark {
-  font-family: var(--font-ui);
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Sans", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--accent);
@@ -673,6 +673,7 @@ body {
 .sheet-header p {
   margin: 0;
   color: var(--muted);
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Sans", sans-serif;
   font-size: 0.82rem;
 }
 
@@ -710,6 +711,7 @@ body {
 }
 
 .sheet-num {
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Sans", sans-serif;
   font-weight: 700;
   color: var(--accent);
   font-size: 0.9rem;
