@@ -252,6 +252,7 @@
         const classes = [
           "map-node",
           `kind-${node.kind || "group"}`,
+          node.tone ? `tone-${node.tone}` : "",
           pathSet.has(node.id) ? "is-on-path" : "",
           node.id === selected ? "is-selected" : "",
           node.id === "root" ? "is-root" : "",
@@ -293,11 +294,12 @@
     const node = byId.get(path[path.length - 1]);
     const kids = node.children || [];
     const see = node.seeId ? byId.get(node.seeId) : null;
-    const art = node.arts && node.arts[0];
-    const quiz =
-      node.id === "pre" || node.id.startsWith("pre-") || (art && art <= 28)
-        ? `<p class="map-detail-foot"><a href="index.html">前文から第28条の穴埋めへ</a></p>`
-        : `<p class="map-detail-foot">前文から第28条は<a href="index.html">穴埋め</a>、指定条文は<a href="study.html">授業セット</a>。</p>`;
+    const inQuiz = node.id.startsWith("pre") || (node.arts || []).some((art) => art <= 28);
+    const quiz = inQuiz
+      ? `<p class="map-detail-foot"><a href="index.html">前文から第28条の穴埋めへ</a></p>`
+      : `<p class="map-detail-foot">前文から第28条は<a href="index.html">穴埋め</a>、指定条文は<a href="study.html">授業セット</a>。</p>`;
+    const articleLabel = node.arts && node.arts.length ? node.arts.map((art) => `第${art}条`).join("・") : "";
+    const kicker = [articleLabel, node.study ? "授業で使う" : ""].filter(Boolean).join(" · ");
     const quote = node.quote
       ? `<blockquote class="map-quote">${escapeHtml(node.quote)}</blockquote>`
       : "";
@@ -313,12 +315,13 @@
           .join("")}</div>`
       : "";
     detail.innerHTML = `
-      <p class="chapter">${escapeHtml(node.hint || "日本国憲法")}${node.study ? " · 授業" : ""}</p>
+      ${kicker ? `<p class="chapter">${escapeHtml(kicker)}</p>` : ""}
       <h2>${escapeHtml(node.label)}</h2>
+      ${node.scene ? `<p class="map-scene">${escapeHtml(node.scene)}</p>` : ""}
       <p class="map-body">${escapeHtml(node.body)}</p>
       ${quote}
       ${seeBtn}
-      ${kids.length ? `<p class="map-child-label">この先の枝 ${kids.length}</p>${childButtons}` : ""}
+      ${kids.length ? `<p class="map-child-label">この中のイメージ ${kids.length}</p>${childButtons}` : ""}
       ${quiz}
     `;
   }

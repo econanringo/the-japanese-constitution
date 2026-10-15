@@ -1085,6 +1085,14 @@ body {
   box-shadow: 0 0 0 3px rgba(196, 59, 59, 0.14);
 }
 
+.map-node.tone-base { border-left: 4px solid #5f6d7a; }
+.map-node.tone-eq { border-left: 4px solid #243140; }
+.map-node.tone-lib { border-left: 4px solid var(--accent); }
+.map-node.tone-soc { border-left: 4px solid var(--ok); }
+.map-node.tone-pol { border-left: 4px solid #2f5278; }
+.map-node.tone-claim { border-left: 4px solid var(--hint); }
+.map-node.tone-duty { border-left: 4px solid #6d5a45; }
+
 .map-node.is-root {
   background: var(--ink);
   color: #fff;
@@ -1153,6 +1161,14 @@ body {
   font-size: 1.45rem;
   letter-spacing: 0.06em;
   line-height: 1.35;
+}
+
+.map-scene {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--ink);
 }
 
 .map-body {
