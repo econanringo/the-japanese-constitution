@@ -8,7 +8,8 @@
 
 - 前文および第一条〜第二十八条の穴埋め問題（`index.html`）
 - 授業向け抽出セットの穴埋め問題（`study.html`）
-- 憲法条文小テスト ver.1（`quiz.html`・全30問・解答欄つき）
+- 憲法条文小テスト ver.1（`quiz.html`・全40問・解答欄つき）
+- 権利の種類と国の係で見るマインドマップ（`map.html`）
 - 条文ごとのナビゲーション（前へ / 次へ）
 - 採点・進捗・正答率の表示
 - ヒント（先頭1文字）
@@ -32,7 +33,8 @@ cd the-japanese-constitution
 | --- | --- |
 | `index.html` | 前文・第一条〜第二十八条 |
 | `study.html` | 授業で指定された条文だけ（99・98・前文・1・4①・11・13・14・19・20①・21①・23・24・33・22①・15③・26・25・27・28・16・32・12） |
-| `quiz.html` | 憲法条文小テスト ver.1（第1・3・11〜14・19〜26・33条／全30問） |
+| `quiz.html` | 憲法条文小テスト ver.1（第1・3・9・11〜14・19〜26・33条／全40問） |
+| `map.html` | 権利の種類と国の係で見るマインドマップ |
 
 ローカルサーバーを使う場合の例:
 
@@ -44,7 +46,7 @@ python3 -m http.server 8080
 npx serve .
 ```
 
-ブラウザで `http://localhost:8080`、`http://localhost:8080/study.html`、または `http://localhost:8080/quiz.html` を開いてください。
+ブラウザで `http://localhost:8080`、`http://localhost:8080/study.html`、`http://localhost:8080/quiz.html`、または `http://localhost:8080/map.html` を開いてください。
 
 3. 空欄に語句を入力し、「採点する」を押す
 
@@ -55,9 +57,12 @@ npx serve .
 | `index.html` | 全文セットのページ |
 | `study.html` | 抽出セットのページ |
 | `quiz.html` | 小テスト ver.1 のページ |
+| `map.html` | マインドマップのページ |
 | `style.css` | スタイル |
 | `app.js` | 穴埋めの表示・採点・進捗管理 |
 | `quiz.js` | 小テストの表示・採点 |
+| `map.js` | マインドマップの配置・操作 |
+| `map-data.js` | マインドマップの枝（かみ砕いた見取り図） |
 | `data.js` | 全文セットの問題データ |
 | `study-data.js` | 抽出セットの問題データ |
 | `quiz-data.js` | 小テストの問題・解答データ |

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>日本国憲法 マインドマップ</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='2' fill='%2315202b'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="map-page">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <p class="brand-mark">憲法学習</p>
+      <h1>日本国憲法　マインドマップ</h1>
+      <p class="brand-sub">条文の目次ではなく、権利の種類と国の係で見る</p>
+      <p class="pack-nav">
+        <a href="index.html">全文セット</a>
+        <span class="pack-sep" aria-hidden="true">／</span>
+        <a href="study.html">授業抽出セット</a>
+        <span class="pack-sep" aria-hidden="true">／</span>
+        <a href="quiz.html">小テスト ver.1</a>
+      </p>
+    </div>
+    <div class="header-stats" aria-live="polite">
+      <div class="stat">
+        <span class="stat-label">人の権利</span>
+        <span class="stat-value">5種</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">国の係</span>
+        <span class="stat-value">3つ</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">いまの深さ</span>
+        <span class="stat-value" id="depth-text">0</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="map-shell">
+    <div class="map-toolbar">
+      <div class="map-toolbar-row">
+        <nav id="map-crumbs" class="map-crumbs" aria-label="開いている枝"></nav>
+        <div class="map-tools">
+          <button type="button" class="btn btn-ghost" id="btn-back">ひとつ戻る</button>
+          <button type="button" class="btn btn-ghost" id="btn-root">最初の枝</button>
+          <button type="button" class="btn btn-ghost" id="btn-zoom-out" title="縮小">−</button>
+          <button type="button" class="btn btn-ghost" id="btn-zoom-in" title="拡大">＋</button>
+          <button type="button" class="btn btn-secondary" id="btn-fit">全体</button>
+        </div>
+      </div>
+      <div class="map-search">
+        <input id="map-search" type="search" placeholder="イメージや条数で探す（例: 自由権、令状、第9条）" aria-label="枝を検索" autocomplete="off" />
+        <ul id="map-hits" class="map-hits" hidden></ul>
+      </div>
+    </div>
+
+    <div class="map-stage">
+      <div class="map-viewport" id="map-viewport">
+        <p class="map-hint">節を押すと枝が開く。背景をドラッグして移動。</p>
+        <div class="map-world" id="map-world">
+          <svg id="map-edges" class="map-edges" aria-hidden="true"></svg>
+          <div id="map-nodes"></div>
+        </div>
+      </div>
+      <aside class="map-detail card" id="map-detail" aria-live="polite"></aside>
+    </div>
+
+    <p class="howto">
+      左が人の権利、右が国の動き方です。節の下の短い言葉が、その権のイメージです。原文そのものではなく、かみ砕いた説明です。「授業」は授業抽出セットの箇所です。
+    </p>
+  </div>
+
+  <script src="map-data.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
